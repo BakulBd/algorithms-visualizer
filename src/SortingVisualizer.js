@@ -16,7 +16,7 @@ const SortingVisualizer = () => {
     const [sortingSpeed, setSortingSpeed] = useState(100);
     const [isStarted, setIsStarted] = useState(false);
     const [algorithmInfo, setAlgorithmInfo] = useState("");
-   // const [mergeIndices, setMergeIndices] = useState([]);
+    const [mergeIndices, setMergeIndices] = useState([]);
     const abortController = useRef(new AbortController());
 
     const sortingRef = useRef(null);
