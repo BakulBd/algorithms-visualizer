@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { FaPlayCircle, FaInfoCircle, FaListAlt, FaChartLine, FaCode, FaLightbulb } from "react-icons/fa";
+import { FaPlayCircle, FaListAlt, FaCode, FaLightbulb } from "react-icons/fa";
 import { MdSpeed, MdAnimation, MdTimeline, MdQuestionAnswer, MdPlayArrow } from "react-icons/md";
 import "./Home.css";
 
