@@ -1,70 +1,102 @@
-# Getting Started with Create React App
+# Sorting Visualizer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a React-based application that visualizes various sorting algorithms. It provides an interactive way to understand how these algorithms work by displaying real-time animations of the sorting process.
+
+## Features
+
+* **Multiple Sorting Algorithms:** Visualizes algorithms like Bubble Sort, Merge Sort, Quick Sort, and more.
+* **Interactive Animations:** Displays the sorting process with dynamic animations.
+* **Speed Control:** Allows users to adjust the speed of the visualization.
+* **Educational Tool:** Helps in understanding the logic and efficiency of different sorting algorithms.
+* **Responsive Design:** Works well on various screen sizes and devices.
+
+## Getting Started
+
+To get started with this project, follow these steps:
+
+### Prerequisites
+
+* Node.js (version 14 or later)
+* npm (Node Package Manager) or yarn
+
+### Installation
+
+1.  **Clone the repository:**
+
+    ```bash
+    git clone <repository_url>
+    cd sorting-visualizer
+    ```
+
+2.  **Install dependencies:**
+
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
+
+### Running the Application
+
+1.  **Start the development server:**
+
+    ```bash
+    npm start
+    # or
+    yarn start
+    ```
+
+2.  **Open the application in your browser:**
+
+    Open [http://localhost:3000](http://localhost:3000) to view the application.
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+### `npm start` or `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Runs the app in development mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser. The page will reload when you make changes. You may also see any lint errors in the console.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### `npm run build` or `yarn build`
 
-### `npm test`
+Builds the app for production to the `build` folder. It correctly bundles React in production mode and optimizes the build for the best performance. The build is minified and the filenames include the hashes. Your app is ready to be deployed!
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Deployment
 
-### `npm run build`
+To deploy this application, you can use platforms like Vercel, Netlify, or GitHub Pages.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Vercel Deployment Example
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1.  Install the Vercel CLI globally:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    ```bash
+    npm install -g vercel
+    ```
 
-### `npm run eject`
+2.  Build the project:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    ```bash
+    npm run build
+    ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3.  Deploy using Vercel CLI:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    ```bash
+    vercel
+    ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+    Follow the prompts to deploy your application.
 
 ## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* **React Documentation:** [https://reactjs.org/](https://reactjs.org/)
+* **Create React App Documentation:** [https://create-react-app.dev/docs/getting-started/](https://create-react-app.dev/docs/getting-started/)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Contributing
 
-### Code Splitting
+Contributions are welcome! If you have any suggestions or find any issues, please feel free to open a pull request or create an issue.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## License
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the [MIT License](LICENSE).
