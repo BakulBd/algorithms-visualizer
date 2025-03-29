@@ -1,0 +1,226 @@
+/* Overall container */
+.visualizer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Align to top for better flow */
+  padding: 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* More modern font */
+  width: 95%;
+  max-width: 1200px;
+  margin: 20px auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+  transition: box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.visualizer-container:hover {
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Title */
+.title {
+  margin-bottom: 25px;
+  font-size: 2.5rem; /* Larger title */
+  color: #333;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  letter-spacing: 1px;
+  font-weight: 600; /* Semi-bold title */
+}
+
+/* Controls section */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+  width: 100%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.menu-item {
+  margin: 10px;
+  display: flex;
+  align-items: center;
+}
+
+label {
+  font-size: 16px;
+  margin-right: 10px;
+  color: #444;
+  font-weight: 500;
+}
+
+input, select, button {
+  padding: 12px 18px;
+  font-size: 16px;
+  margin: 6px;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background-color: #f0f0f0;
+  box-sizing: border-box;
+  min-width: 120px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+input:hover, select:hover, button:hover {
+  border-color: #bbb;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #66afe9;
+  box-shadow: 0 0 5px rgba(102, 175, 233, 0.5);
+}
+
+.controls-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.start-btn, .stop-btn {
+  padding: 14px 25px;
+  font-size: 16px;
+  margin: 8px;
+  border: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+}
+
+.start-btn {
+  background-color: #2ecc71;
+  transition: background-color 0.3s ease;
+}
+
+.start-btn:hover {
+  background-color: #27ae60;
+}
+
+.stop-btn {
+  background-color: #e74c3c;
+  transition: background-color 0.3s ease;
+}
+
+.stop-btn:hover {
+  background-color: #c0392b;
+}
+
+/* Array visualization container */
+.bars-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  width: 100%;
+  height: 450px; /* Increased height */
+  margin-top: 20px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  padding: 15px; /* Added padding for better spacing */
+  transition: box-shadow 0.3s ease;
+}
+
+.bars-container:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Individual bar */
+.bar {
+  margin: 0 2px;
+  background-color: #3498db;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  transition: height 0.3s ease, background-color 0.2s ease;
+  border-radius: 5px;
+  flex-shrink: 0;
+}
+
+/* Bar value */
+.bar-value {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Array element details */
+.array-info {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.array-elements {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.array-element {
+  font-size: 15px;
+  color: #34495e;
+  background-color: #ecf0f1;
+  padding: 6px 12px;
+  border-radius: 8px;
+  margin: 4px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.array-element:hover {
+  background-color: #d5dbdb;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .bar {
+      margin: 0 1px;
+  }
+  .bars-container {
+      height: 400px;
+  }
+  .menu-item {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+  input, select, button {
+      width: 100%;
+      margin-bottom: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bar {
+      margin: 0 0.5px;
+  }
+  .bars-container {
+      height: 350px;
+  }
+  .controls {
+      flex-direction: column;
+      align-items: center;
+  }
+  .menu-item {
+      margin: 8px;
+  }
+}

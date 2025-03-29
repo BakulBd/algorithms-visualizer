@@ -1,0 +1,154 @@
+.home-container {
+  font-family: "Montserrat", sans-serif;
+  color: #333;
+  background-color: #f4f4f4;
+  text-align: center;
+  min-height: 100vh;
+  padding: 0 20px;
+  overflow-x: hidden;
+}
+
+.hero-section {
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+  border-radius: 12px;
+  transition: background 0.5s ease;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content p {
+  font-size: 1.4rem;
+  margin-bottom: 28px;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.explore-btn {
+  padding: 18px 36px;
+  font-size: 1.4rem;
+  background-color: white;
+  color: #333;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.explore-btn:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+}
+
+.about-section {
+  background-color: #fff;
+  padding: 70px 20px;
+  border-radius: 12px;
+  margin: 50px auto;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  max-width: 950px;
+}
+
+.about-section h2 {
+  font-size: 3rem;
+  margin-bottom: 30px;
+  font-weight: 800;
+  color: #3498db;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.about-section p {
+  font-size: 1.3rem;
+  max-width: 850px;
+  margin: 0 auto;
+  line-height: 2;
+  color: #555;
+}
+
+.features-section {
+  padding: 70px 20px;
+  background-color: #f9f9f9;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 35px;
+  margin-top: 35px;
+}
+
+.feature-card {
+  padding: 45px;
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);
+}
+
+.feature-card h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: 800;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card p {
+  font-size: 1.3rem;
+  line-height: 2;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+  font-size: 3.5rem;
+  margin-bottom: 25px;
+  color: #e0f7fa;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 3.2rem;
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+
+  .explore-btn {
+    padding: 16px 32px;
+    font-size: 1.3rem;
+  }
+
+  .about-section p {
+    font-size: 1.2rem;
+  }
+}
