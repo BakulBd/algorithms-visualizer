@@ -16,7 +16,7 @@ const SortingVisualizer = () => {
     const [sortingSpeed, setSortingSpeed] = useState(100);
     const [isStarted, setIsStarted] = useState(false);
     const [algorithmInfo, setAlgorithmInfo] = useState("");
-    const [setMergeIndices] = useState([]);
+    const [mergeIndices, setMergeIndices] = useState([]); // Fix: Initialize mergeIndices state
     const abortController = useRef(new AbortController());
 
     const sortingRef = useRef(null);
@@ -37,14 +37,21 @@ const SortingVisualizer = () => {
             setIsStarted(true);
             setAlgorithmInfo(getAlgorithmInfo(sortingAlgorithm));
             const algorithmMap = {
-                BubbleSort: (arr, setArr, setIsSort, speed, abort) => BubbleSort(arr, setArr, setIsSort, speed, abort.current.signal),
-                InsertionSort: (arr, setArr, setIsSort, speed, abort) => InsertionSort(arr, setArr, setIsSort, speed, abort.current.signal),
-                QuickSort: (arr, setArr, setIsSort, speed, abort) => QuickSort(arr, setArr, setIsSort, speed, abort.current.signal),
-                MergeSort: (arr, setArr, setIsSort, speed, abort) => MergeSort(arr, setArr, setIsSort, speed, setMergeIndices, abort),
-                SelectionSort: (arr, setArr, setIsSort, speed, abort) => SelectionSort(arr, setArr, setIsSort, speed, abort.current.signal),
-                CountingSort: (arr, setArr, setIsSort, speed, abort) => CountingSort(arr, setArr, setIsSort, speed, abort.current.signal),
+                BubbleSort: BubbleSort,
+                InsertionSort: InsertionSort,
+                QuickSort: QuickSort,
+                MergeSort: (arr, setArr, setIsSort, speed, abort) =>
+                    MergeSort(arr, setArr, setIsSort, speed, setMergeIndices, abort), // Pass setMergeIndices
+                SelectionSort: SelectionSort,
+                CountingSort: CountingSort,
             };
-            sortingRef.current = algorithmMap[sortingAlgorithm](array, setArray, setIsSorting, sortingSpeed, abortController);
+            sortingRef.current = algorithmMap[sortingAlgorithm](
+                array,
+                setArray,
+                setIsSorting,
+                sortingSpeed,
+                abortController
+            );
         }
     }, [array, sortingAlgorithm, sortingSpeed, isSorting, setMergeIndices]);
 
@@ -157,15 +164,14 @@ const SortingVisualizer = () => {
                 </div>
             </div>
 
-            <div className="bars-container">
+            <div className="bars-container" style={{ '--bar-count': arraySize }}>
                 {array.map((value, index) => (
                     <div
                         key={index}
                         className="bar"
                         style={{
-                            height: `${value}px`,
-                            backgroundColor: `hsl(${(index / array.length) * 360}, 100%, 50%)`,
-                            width: `${Math.max(2, (80 / arraySize))}vw`,
+                            height: `${value * 3}px`,
+                            backgroundColor: mergeIndices.includes(index) ? "#e74c3c" : `hsl(${(index / array.length) * 360}, 100%, 50%)`, // Highlight merge indices
                         }}
                     >
                         <span className="bar-value">{value}</span>

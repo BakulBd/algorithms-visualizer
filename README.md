@@ -50,21 +50,9 @@ To get started with this project, follow these steps:
 
     Open [http://localhost:3000](http://localhost:3000) to view the application.
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start` or `yarn start`
-
-Runs the app in development mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser. The page will reload when you make changes. You may also see any lint errors in the console.
-
-### `npm run build` or `yarn build`
-
-Builds the app for production to the `build` folder. It correctly bundles React in production mode and optimizes the build for the best performance. The build is minified and the filenames include the hashes. Your app is ready to be deployed!
-
 ## Deployment
 
-To deploy this application, you can use platforms like Vercel, Netlify, or GitHub Pages.
+To deploy this application, you can use Vercel.
 
 ### Vercel Deployment Example
 

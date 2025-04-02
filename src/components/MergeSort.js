@@ -1,62 +1,51 @@
+/**
+ * MergeSort.js
+ * Implements the Merge Sort algorithm with visualization support.
+ * Updates the array and merge indices for visualization.
+ */
 
-const MergeSortLogic = (array, speed, setArray, setComparisonCount, setSwapCount, abortSignal, setMergeIndices) => {
-    let comparisons = 0;
-    let swaps = 0;
-
+const MergeSortLogic = (array, speed, setArray, abortSignal, setMergeIndices) => {
     const merge = async (arr, l, m, r) => {
         if (abortSignal && abortSignal.aborted) return;
-        const n1 = m - l + 1;
-        const n2 = r - m;
 
-        const L = new Array(n1);
-        const R = new Array(n2);
+        const left = arr.slice(l, m + 1);
+        const right = arr.slice(m + 1, r + 1);
 
-        for (let i = 0; i < n1; i++) L[i] = arr[l + i];
-        for (let j = 0; j < n2; j++) R[j] = arr[m + 1 + j];
+        let i = 0, j = 0, k = l;
 
-        let i = 0;
-        let j = 0;
-        let k = l;
-
-        while (i < n1 && j < n2) {
+        // Merge the two halves
+        while (i < left.length && j < right.length) {
             if (abortSignal && abortSignal.aborted) return;
-            comparisons++;
-            if (L[i] <= R[j]) {
-                arr[k] = L[i];
-                i++;
+
+            if (left[i] <= right[j]) {
+                arr[k++] = left[i++];
             } else {
-                arr[k] = R[j];
-                j++;
+                arr[k++] = right[j++];
             }
-            swaps++;
             setArray([...arr]);
-            setMergeIndices([l, m, k]); // Visualize merge
-            k++;
-            await new Promise((resolve) => setTimeout(resolve, speed));
+            setMergeIndices([l, m, r]); // Highlight merge indices
+            await new Promise(resolve => setTimeout(resolve, speed));
         }
 
-        while (i < n1) {
+        // Copy remaining elements from left
+        while (i < left.length) {
             if (abortSignal && abortSignal.aborted) return;
-            arr[k] = L[i];
-            swaps++;
+            arr[k++] = left[i++];
             setArray([...arr]);
-            setMergeIndices([l, m, k]); // Visualize merge
-            i++;
-            k++;
-            await new Promise((resolve) => setTimeout(resolve, speed));
+            setMergeIndices([l, m, r]);
+            await new Promise(resolve => setTimeout(resolve, speed));
         }
 
-        while (j < n2) {
+        // Copy remaining elements from right
+        while (j < right.length) {
             if (abortSignal && abortSignal.aborted) return;
-            arr[k] = R[j];
-            swaps++;
+            arr[k++] = right[j++];
             setArray([...arr]);
-            setMergeIndices([l, m, k]); // Visualize merge
-            j++;
-            k++;
-            await new Promise((resolve) => setTimeout(resolve, speed));
+            setMergeIndices([l, m, r]);
+            await new Promise(resolve => setTimeout(resolve, speed));
         }
-        setMergeIndices([]); // Clear indices
+
+        setMergeIndices([]); // Clear indices after merging
     };
 
     const mergeSort = async (arr, l, r) => {
@@ -68,36 +57,29 @@ const MergeSortLogic = (array, speed, setArray, setComparisonCount, setSwapCount
         }
     };
 
-    const start = async () => {
+    return async () => {
         await mergeSort([...array], 0, array.length - 1);
-        setComparisonCount(comparisons);
-        setSwapCount(swaps);
-    };
-
-    return {
-        start,
-        comparisons,
-        swaps,
     };
 };
 
-const MergeSort = (array, setArray, setIsSorting, speed, setMergeIndices, setComparisonCount, setSwapCount, abortController) => {
-    const { start, comparisons, swaps } = MergeSortLogic(array, speed, setArray, setComparisonCount, setSwapCount, abortController.current.signal, setMergeIndices);
+const MergeSort = (array, setArray, setIsSorting, speed, setMergeIndices, abortController) => {
+    const run = MergeSortLogic(array, speed, setArray, abortController.current.signal, setMergeIndices);
 
-    const run = async () => {
-        await start();
-        setIsSorting(false);
-    };
-
-    run();
+    run()
+        .then(() => {
+            setIsSorting(false);
+            setMergeIndices([]); // Ensure indices are cleared after sorting
+        })
+        .catch(() => {
+            setIsSorting(false);
+            setMergeIndices([]);
+        });
 
     return {
         abort: () => {
             abortController.current.abort();
             setIsSorting(false);
-            setComparisonCount(comparisons);
-            setSwapCount(swaps);
-            setMergeIndices([]); // Clear indices on abort
+            setMergeIndices([]);
         },
     };
 };

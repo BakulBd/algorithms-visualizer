@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaPlayCircle, FaListAlt, FaCode, FaLightbulb } from "react-icons/fa";
 import { MdSpeed, MdAnimation, MdTimeline, MdQuestionAnswer, MdPlayArrow } from "react-icons/md";
@@ -7,6 +7,7 @@ import "./Home.css";
 const Home = () => {
   const navigate = useNavigate();
   const [randomColor, setRandomColor] = useState(getRandomColor());
+  const heroTitleRef = useRef(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -14,6 +15,12 @@ const Home = () => {
     }, 10000);
 
     return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    if (heroTitleRef.current) {
+      heroTitleRef.current.classList.add("hero-title-animated");
+    }
   }, []);
 
   function getRandomColor() {
@@ -41,11 +48,32 @@ const Home = () => {
     return "#" + RR + GG + BB;
   }
 
+  useEffect(() => {
+    const featureCards = document.querySelectorAll('.feature-card');
+    featureCards.forEach((card, index) => {
+      const color1 = getRandomColor();
+      const color2 = adjustBrightness(color1, 50);
+      card.style.background = `linear-gradient(135deg, ${color1}, ${color2})`;
+
+      const leaves = document.createElement('div');
+      leaves.classList.add('leaves');
+      card.appendChild(leaves);
+
+      const flowers = document.createElement('div');
+      flowers.classList.add('flowers');
+      card.appendChild(flowers);
+
+      const snow = document.createElement('div');
+      snow.classList.add('snow');
+      card.appendChild(snow);
+    });
+  }, []);
+
   return (
     <div className="home-container">
       <header className="hero-section" style={{ background: `linear-gradient(to right, ${randomColor}, ${adjustBrightness(randomColor, 80)})` }}>
         <div className="hero-content">
-          <h1 className="hero-title">Sorting Visualizer</h1>
+          <h1 ref={heroTitleRef} className="hero-title">Sorting Visualizer</h1>
           <p className="hero-description">
             Visualize sorting algorithms with interactive animations and learn how they work.
           </p>
@@ -65,43 +93,42 @@ const Home = () => {
       <section className="features-section">
         <h2 className="section-title">Key Features</h2>
         <div className="features-grid">
-          {/* Enhanced Feature Cards */}
-          <div className="feature-card" style={{ background: `linear-gradient(135deg, ${getRandomColor()}, ${adjustBrightness(getRandomColor(), 50)})` }}>
+          <div className="feature-card">
             <FaListAlt className="feature-icon" />
             <h3>Multiple Algorithms</h3>
             <p>Supports a variety of sorting algorithms.</p>
           </div>
-          <div className="feature-card" style={{ background: `linear-gradient(135deg, ${getRandomColor()}, ${adjustBrightness(getRandomColor(), 50)})` }}>
+          <div className="feature-card">
             <MdAnimation className="feature-icon" />
             <h3>Interactive Visualization</h3>
             <p>Real-time array element changes.</p>
           </div>
-          <div className="feature-card" style={{ background: `linear-gradient(135deg, ${getRandomColor()}, ${adjustBrightness(getRandomColor(), 50)})` }}>
+          <div className="feature-card">
             <MdSpeed className="feature-icon" />
             <h3>Speed Control</h3>
             <p>Adjust sorting speed for better understanding.</p>
           </div>
-          <div className="feature-card" style={{ background: `linear-gradient(135deg, ${getRandomColor()}, ${adjustBrightness(getRandomColor(), 50)})` }}>
+          <div className="feature-card">
             <FaCode className="feature-icon" />
             <h3>Code Snippets</h3>
             <p>View code snippets of each algorithm.</p>
           </div>
-          <div className="feature-card" style={{ background: `linear-gradient(135deg, ${getRandomColor()}, ${adjustBrightness(getRandomColor(), 50)})` }}>
+          <div className="feature-card">
             <FaLightbulb className="feature-icon" />
             <h3>Educational Tool</h3>
             <p>Ideal for students and developers.</p>
           </div>
-          <div className="feature-card" style={{ background: `linear-gradient(135deg, ${getRandomColor()}, ${adjustBrightness(getRandomColor(), 50)})` }}>
+          <div className="feature-card">
             <MdTimeline className="feature-icon" />
             <h3>Performance Analysis</h3>
             <p>Analyze algorithm performance.</p>
           </div>
-          <div className="feature-card" style={{ background: `linear-gradient(135deg, ${getRandomColor()}, ${adjustBrightness(getRandomColor(), 50)})` }}>
+          <div className="feature-card">
             <MdQuestionAnswer className="feature-icon" />
             <h3>Algorithm Info</h3>
             <p>Detailed algorithm information.</p>
           </div>
-          <div className="feature-card" style={{ background: `linear-gradient(135deg, ${getRandomColor()}, ${adjustBrightness(getRandomColor(), 50)})` }}>
+          <div className="feature-card">
             <MdPlayArrow className="feature-icon" />
             <h3>Step-by-Step Mode</h3>
             <p>Control visualization step by step.</p>

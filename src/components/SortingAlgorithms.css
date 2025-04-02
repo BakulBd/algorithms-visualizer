@@ -78,24 +78,25 @@ select, input {
 
 .bars-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: flex-end;
     width: 100%;
-    height: 400px;
+    height: 450px;
     margin-top: 20px;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    margin: 20px 0; /* Adjust margin */
+    overflow-x: hidden;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    padding: 10px;
 }
 
 .bar {
-    width: 10px;
-    margin: 0 3px;
+    margin: 0 2px;
     background-color: #3498db;
-    display: flex;
-    align-items: flex-end;
-    position: relative;
-    transition: height 0.3s ease;
+    border-radius: 5px;
+    flex-shrink: 0;
+    width: calc(100% / var(--bar-count) - 4px);
+    transition: height 0.3s ease, background-color 0.2s ease;
 }
 
 .bar-value {

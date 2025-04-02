@@ -28,11 +28,11 @@ const About = () => {
           👋 Hi, I'm Bakul Ahmed
         </h2>
         <p>
-          A passionate **developer** and a proud CSE student at{" "}
-          <FaUniversity /> **Green University of Bangladesh**. I have a strong
-          interest in **web technologies** and **software development**. I love
+          A passionate developer and a proud CSE student at{" "}
+          <FaUniversity /> Green University of Bangladesh. I have a strong
+          interest in web technologies and software development. I love
           solving complex problems, creating efficient algorithms, and building
-          **beautiful, functional UIs**.
+          beautiful, functional UIs.
         </p>
         <p>
           My academic journey at Green University has provided me with a solid
@@ -46,7 +46,7 @@ const About = () => {
       <section className="education-section">
         <h2>🎓 Education</h2>
         <p>
-          <FaUniversity /> **Green University of Bangladesh**
+          <FaUniversity /> Green University of Bangladesh
         </p>
         <p>
           B.Sc. in Computer Science and Engineering (Ongoing)
