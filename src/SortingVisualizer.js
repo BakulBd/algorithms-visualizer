@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { FaPlayCircle, FaStopCircle, FaRandom, FaInfoCircle } from "react-icons/fa";
-import './SortingVisualizer.css';
+import "./SortingVisualizer.css";
 import BubbleSort from "./components/BubbleSort";
 import InsertionSort from "./components/InsertionSort";
 import QuickSort from "./components/QuickSort";

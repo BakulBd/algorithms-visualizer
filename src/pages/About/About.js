@@ -10,7 +10,7 @@ import {
   FaUniversity,
 } from "react-icons/fa"; // More icons
 import { SiCplusplus, SiHtml5, SiCss3 } from "react-icons/si"; // Even more icons
-import "./About.css"; // Make sure this file exists
+import "./About.css";
 
 const About = () => {
   return (

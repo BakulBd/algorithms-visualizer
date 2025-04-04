@@ -81,6 +81,10 @@ To deploy this application, you can use Vercel.
 * **React Documentation:** [https://reactjs.org/](https://reactjs.org/)
 * **Create React App Documentation:** [https://create-react-app.dev/docs/getting-started/](https://create-react-app.dev/docs/getting-started/)
 
+## Chatbot Feature
+
+This project includes a floating chatbot named **AlgoBot**. It can answer questions about sorting algorithms, the project, and related topics. The chatbot is powered by OpenAI's API and is accessible from any page.
+
 ## Contributing
 
 Contributions are welcome! If you have any suggestions or find any issues, please feel free to open a pull request or create an issue.

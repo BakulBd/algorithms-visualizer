@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaHome, FaChartLine, FaInfoCircle, FaBars, FaTimes } from "react-icons/fa";
-import "./Header.css";
+import "./Header.css"; // Corrected import path
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

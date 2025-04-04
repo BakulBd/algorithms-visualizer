@@ -1,9 +1,3 @@
-/**
- * MergeSort.js
- * Implements the Merge Sort algorithm with visualization support.
- * Updates the array and merge indices for visualization.
- */
-
 const MergeSortLogic = (array, speed, setArray, abortSignal, setMergeIndices) => {
     const merge = async (arr, l, m, r) => {
         if (abortSignal && abortSignal.aborted) return;
@@ -13,7 +7,6 @@ const MergeSortLogic = (array, speed, setArray, abortSignal, setMergeIndices) =>
 
         let i = 0, j = 0, k = l;
 
-        // Merge the two halves
         while (i < left.length && j < right.length) {
             if (abortSignal && abortSignal.aborted) return;
 
@@ -23,11 +16,10 @@ const MergeSortLogic = (array, speed, setArray, abortSignal, setMergeIndices) =>
                 arr[k++] = right[j++];
             }
             setArray([...arr]);
-            setMergeIndices([l, m, r]); // Highlight merge indices
+            setMergeIndices([l, m, r]); // Update merge indices
             await new Promise(resolve => setTimeout(resolve, speed));
         }
 
-        // Copy remaining elements from left
         while (i < left.length) {
             if (abortSignal && abortSignal.aborted) return;
             arr[k++] = left[i++];
@@ -36,7 +28,6 @@ const MergeSortLogic = (array, speed, setArray, abortSignal, setMergeIndices) =>
             await new Promise(resolve => setTimeout(resolve, speed));
         }
 
-        // Copy remaining elements from right
         while (j < right.length) {
             if (abortSignal && abortSignal.aborted) return;
             arr[k++] = right[j++];

@@ -1,5 +1,5 @@
 import React from "react";
-import "./Privacy.css";
+import "./Privacy.css"; // Corrected import path
 
 const PrivacyPolicy = () => {
   return (
