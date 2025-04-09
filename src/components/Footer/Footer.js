@@ -65,7 +65,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className="footer-bottom">
-                <p>&copy; {new Date().getFullYear()} Bakul Ahmed</p>
+                <p>&copy; {new Date().getFullYear()} - Algorithms Visualizers</p>
             </div>
         </footer>
     );
