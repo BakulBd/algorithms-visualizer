@@ -7,6 +7,7 @@ import Home from "./pages/Home/Home";
 import SortingVisualizerPage from "./pages/SortingVisualizerPage/SortingVisualizerPage";
 import About from "./pages/About/About";
 import Privacy from "./pages/Privacy/Privacy";
+import HuffmanVisualizerPage from "./pages/HuffmanVisualizerPage/HuffmanVisualizerPage";
 
 function App() {
     return (
@@ -17,6 +18,7 @@ function App() {
                 <Route path="/sorting-visualizer" element={<SortingVisualizerPage />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/privacy" element={<Privacy />} />
+                <Route path="/huffman-visualizer" element={<HuffmanVisualizerPage />} />
             </Routes>
             <Footer />
             <Chatbot />

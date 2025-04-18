@@ -63,3 +63,40 @@
   font-size: 12px;
   text-align: center;
 }
+
+.huffman-visualizer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.panels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.frequency-table, .huffman-tree, .code-panel {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.frequency-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.frequency-table th, .frequency-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.frequency-table th {
+  background-color: #f2f2f2;
+}

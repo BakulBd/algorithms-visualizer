@@ -130,7 +130,8 @@ const Header=()=>{
           <nav className={`menu-nav ${isMenuOpen?"open":""}`} ref={menuRef}>
             <ul className="menu-list">
               <li className="menu-item"><Link to="/" className="menu-link" onClick={()=>setIsMenuOpen(false)}><FaHome/> Home</Link></li>
-              <li className="menu-item"><Link to="/sorting-visualizer" className="menu-link" onClick={()=>setIsMenuOpen(false)}><FaSortAmountDown/> Visualizer</Link></li>
+              <li className="menu-item"><Link to="/sorting-visualizer" className="menu-link" onClick={()=>setIsMenuOpen(false)}><FaSortAmountDown/>Sorting Visualizer</Link></li>
+              <li className="menu-item"><Link to="/huffman-visualizer" className="menu-link" onClick={()=>setIsMenuOpen(false)}><FaChartLine/> Huffman Visualizer</Link></li>
               <li className="menu-item"><Link to="/about" className="menu-link" onClick={()=>setIsMenuOpen(false)}><FaInfoCircle/> About</Link></li>
             </ul>
           </nav>

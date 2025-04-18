@@ -48,7 +48,12 @@ const Footer = () => {
                         </li>
                         <li className="footer-links-item">
                             <a href="/sorting-visualizer" className="footer-link">
-                                <FaCode className="link-icon" /> Visualizer
+                                <FaCode className="link-icon" /> Sorting Visualizer
+                            </a>
+                        </li>
+                        <li className="footer-links-item">
+                            <a href="/huffman-visualizer" className="footer-link">
+                                <FaCode className="link-icon" /> Huffman Visualizer
                             </a>
                         </li>
                         <li className="footer-links-item">
