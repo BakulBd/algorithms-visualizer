@@ -9,6 +9,14 @@ const PrivacyPolicy = () => {
         <title>Privacy Policy - Algorithms Visualizer</title>
         <meta name="description" content="Read the privacy policy for Algorithms Visualizer." />
         <meta name="keywords" content="Privacy Policy, Data Protection, Algorithms Visualizer" />
+        <meta property="og:title" content="Privacy Policy - Algorithms Visualizer" />
+        <meta property="og:description" content="Read the privacy policy for Algorithms Visualizer." />
+        <meta property="og:image" content="/og-thumbnail.jpg" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Privacy Policy - Algorithms Visualizer" />
+        <meta name="twitter:description" content="Read the privacy policy for Algorithms Visualizer." />
+        <meta name="twitter:image" content="/twitter-thumbnail.jpg" />
       </Helmet>
       <div className="privacy-container">
         <h1 className="privacy-title">Privacy Policy</h1>

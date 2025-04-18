@@ -20,6 +20,14 @@ const About = () => {
         <title>About - Algorithms Visualizer</title>
         <meta name="description" content="Learn about the developer and the purpose of Algorithms Visualizer." />
         <meta name="keywords" content="About, Developer, Algorithms Visualizer, Educational Tool" />
+        <meta property="og:title" content="About - Algorithms Visualizer" />
+        <meta property="og:description" content="Learn about the developer and the purpose of Algorithms Visualizer." />
+        <meta property="og:image" content="/og-thumbnail.jpg" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About - Algorithms Visualizer" />
+        <meta name="twitter:description" content="Learn about the developer and the purpose of Algorithms Visualizer." />
+        <meta name="twitter:image" content="/twitter-thumbnail.jpg" />
       </Helmet>
       <div className="about-container">
         <header className="about-header">

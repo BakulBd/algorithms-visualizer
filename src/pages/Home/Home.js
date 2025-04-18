@@ -104,6 +104,14 @@ export default function Home() {
         <title>Home - Algorithms Visualizer</title>
         <meta name="description" content="Explore sorting algorithms and Huffman encoding with interactive visualizations." />
         <meta name="keywords" content="Sorting Visualizer, Huffman Encoding, Algorithms, Data Structures, Educational Tool" />
+        <meta property="og:title" content="Home - Algorithms Visualizer" />
+        <meta property="og:description" content="Explore sorting algorithms and Huffman encoding with interactive visualizations." />
+        <meta property="og:image" content="/og-thumbnail.jpg" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Home - Algorithms Visualizer" />
+        <meta name="twitter:description" content="Explore sorting algorithms and Huffman encoding with interactive visualizations." />
+        <meta name="twitter:image" content="/twitter-thumbnail.jpg" />
       </Helmet>
       <div className="home-container">
         {/* Sorting Visualizer Banner */}
